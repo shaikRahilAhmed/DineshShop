@@ -75,13 +75,16 @@ const ReviewsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {reviews.map((review, i) => (
-            <motion.div
+            <motion.a
               key={i}
+              href="https://maps.app.goo.gl/Nb8RQsiHaBpH5M2o9"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-card border border-border rounded-xl p-6 hover:shadow-warm transition-all relative"
+              className="bg-card border border-border rounded-xl p-6 hover:shadow-warm transition-all relative cursor-pointer"
             >
               <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/10" />
               <div className="flex items-center gap-1 mb-3">
@@ -113,7 +116,7 @@ const ReviewsSection = () => {
                   {review.source}
                 </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
